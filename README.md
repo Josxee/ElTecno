@@ -2,9 +2,9 @@
 
 Integrantes:
 José David Alvarado Ramírez,
-José Guillermo Sibaja Murillo
-Jose Luis Guerrero Vargas
-Landon Patterson Foster
+José Guillermo Sibaja Murillo,
+Jose Luis Guerrero Vargas,
+Landon Patterson Foster,
 Christopher Ariel Carballo Vallejos
 
 Repositorio:
