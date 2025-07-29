@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP ProBook\\Downloads\\ElTecno\\ElTecno\\ElTecno\\ElTecno.csproj": {}
+    "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP ProBook\\Downloads\\ElTecno\\ElTecno\\ElTecno\\ElTecno.csproj": {
+    "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP ProBook\\Downloads\\ElTecno\\ElTecno\\ElTecno\\ElTecno.csproj",
+        "projectUniqueName": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj",
         "projectName": "ElTecno",
-        "projectPath": "C:\\Users\\HP ProBook\\Downloads\\ElTecno\\ElTecno\\ElTecno\\ElTecno.csproj",
-        "packagesPath": "C:\\Users\\HP ProBook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP ProBook\\Downloads\\ElTecno\\ElTecno\\ElTecno\\obj\\",
+        "projectPath": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj",
+        "packagesPath": "C:\\Users\\jl200\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP ProBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jl200\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -66,9 +66,17 @@
               "target": "Package",
               "version": "[8.0.16, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.16, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             }
           },
           "imports": [
@@ -90,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

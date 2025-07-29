@@ -1,0 +1,20 @@
+﻿@page
+@model ConfirmEmailModel
+@{
+    ViewData["Title"] = "Email confirmado";
+}
+
+<h1 class="text-success">@ViewData["Title"]</h1>
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+
+<div class="alert alert-info mt-3">
+    Serás redirigido al inicio de sesión en unos segundos...
+</div>
+
+@section Scripts {
+    <script>
+        setTimeout(function () {
+            window.location.href = '/Identity/Account/Login';
+        }, 3000); 
+    </script>
+}
