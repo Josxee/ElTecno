@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj": {}
+    "D:\\UNIVERSIDAD 7CUATRI\\PROGRA AVANZADA WEB\\Proyecto\\ElTecno\\ElTecno\\ElTecno.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj": {
+    "D:\\UNIVERSIDAD 7CUATRI\\PROGRA AVANZADA WEB\\Proyecto\\ElTecno\\ElTecno\\ElTecno.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj",
+        "projectUniqueName": "D:\\UNIVERSIDAD 7CUATRI\\PROGRA AVANZADA WEB\\Proyecto\\ElTecno\\ElTecno\\ElTecno.csproj",
         "projectName": "ElTecno",
-        "projectPath": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\ElTecno.csproj",
-        "packagesPath": "C:\\Users\\jl200\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jl200\\OneDrive\\Escritorio\\Programacion Avanzada en Web\\ElTecnoProyecto\\ElTecno\\obj\\",
+        "projectPath": "D:\\UNIVERSIDAD 7CUATRI\\PROGRA AVANZADA WEB\\Proyecto\\ElTecno\\ElTecno\\ElTecno.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "D:\\UNIVERSIDAD 7CUATRI\\PROGRA AVANZADA WEB\\Proyecto\\ElTecno\\ElTecno\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jl200\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

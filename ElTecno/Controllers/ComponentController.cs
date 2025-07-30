@@ -67,5 +67,13 @@ namespace ElTecno.Controllers
 
             return Json(new { success = true, message = "Componente eliminado" });
         }
+        public async Task<IActionResult> Dashboard()
+        {
+            var components = await _context.Components
+                .Where(c => c.IsActive)
+                .ToListAsync();
+
+            return View(components);
+        }
     }
 }

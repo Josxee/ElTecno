@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ElTecno.Models.Component>
+
+@{
+    ViewData["Title"] = "Media Dashboard";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">@ViewData["Title"]</h2>
+
+    <div class="row">
+        @foreach (var component in Model.Where(c => c.IsActive))
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <strong>@component.Name</strong>
+                        <span class="badge bg-primary text-capitalize">@component.Type</span>
+                    </div>
+                    <div class="card-body">
+                        <div id="component-@component.Id" class="text-muted">
+                            Cargando datos desde API...
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <small>Refresca cada @component.RefreshInterval segundos</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const components = @Html.Raw(Json.Serialize(Model.Where(c => c.IsActive)));
+
+        components.forEach(c => {
+            const loadComponentData = () => {
+                fetch(c.apiUrl)
+                    .then(res => res.json())
+                    .then(data => {
+                        let content = "";
+
+                        switch (c.type.toLowerCase()) {
+                            case "clima":
+                                content = `Temperatura: ${data.current?.temperature_2m ?? 'N/D'} °C`;
+                                break;
+                            case "noticias":
+                                content = `Titular: ${data.articles?.[0]?.title ?? 'No disponible'}`;
+                                break;
+                            case "moneda":
+                                content = `1 USD = ${data.rates?.CRC ?? 'N/D'} CRC`;
+                                break;
+                            case "anuncios":
+                                content = `Anuncio: ${data.results?.[0]?.title ?? 'No disponible'}`;
+                                break;
+                            default:
+                                content = "Tipo no soportado aún.";
+                        }
+
+                        document.getElementById(`component-${c.id}`).innerHTML = content;
+                    })
+                    .catch(err => {
+                        document.getElementById(`component-${c.id}`).innerHTML = "Error cargando datos.";
+                        console.error(err);
+                    });
+            };
+
+            loadComponentData();
+            setInterval(loadComponentData, c.refreshInterval * 1000);
+        });
+    </script>
+}
