@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ElTecno.Models.Component>
+
+@{
+    ViewData["Title"] = "Media Dashboard";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">@ViewData["Title"]</h2>
+
+    <div class="row">
+        @foreach (var component in Model.Where(c => c.IsActive))
+
+        {
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <strong>@component.Name</strong>
+                        <span class="badge bg-primary text-capitalize">@component.Type</span>
+                    </div>
+                    <div class="card-body">
+                        <div id="component-@component.Id" class="text-muted">
+                            Cargando datos desde API...
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <small>Refresca cada @component.RefreshInterval segundos</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const components = @Html.Raw(Json.Serialize(Model.Where(c => c.IsActive)));
+
+        components.forEach(c => {
+            const loadComponentData = () => {
+                fetch(c.apiUrl)
+                    .then(res => res.json())
+                    .then(data => {
+                        let content = "Tipo no soportado aún.";
+
+                        // --- Detección automática del tipo de datos ---
+                        if (data.current?.temperature_2m !== undefined) {
+                            // Clima
+                            content = `🌡️ Temperatura: ${data.current.temperature_2m} °C`;
+                        }
+                        else if (Array.isArray(data.articles) && data.articles.length > 0) {
+                            // Noticias
+                            content = `📰 Titular: ${data.articles[0].title ?? 'No disponible'}`;
+                        }
+                        else if (data.rates?.CRC !== undefined) {
+                            // Moneda
+                            content = `💵 1 USD = ${data.rates.CRC} CRC`;
+                        }
+                        else if (Array.isArray(data.results) && data.results.length > 0) {
+                            // Anuncios
+                            content = `📢 Anuncio: ${data.results[0].title ?? 'No disponible'}`;
+                        }
+
+                        document.getElementById(`component-${c.id}`).innerHTML = content;
+                    })
+                    .catch(err => {
+                        document.getElementById(`component-${c.id}`).innerHTML = "⚠️ Error cargando datos.";
+                        console.error(err);
+                    });
+            };
+
+            loadComponentData();
+
+            setInterval(loadComponentData, c.refreshInterval * 1000);
+        });
+    </script>
+}
